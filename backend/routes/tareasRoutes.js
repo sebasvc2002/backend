@@ -4,7 +4,7 @@ const {getTareas, createTareas, updateTareas, deleteTareas} = require('../contro
 const {protect} = require('../middleware/authMiddleware')
 
 router.get('/', getTareas);
-router.post('/', createTareas);
+router.post('/',protect, createTareas);
 router.put('/:id', updateTareas);
 router.delete('/:id', deleteTareas);
 
